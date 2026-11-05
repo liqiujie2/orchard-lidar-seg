@@ -172,6 +172,24 @@ lidar-bonnetal/
 └── README.md
 ```
 
+## 📚 引用
+
+若本仓库的代码或数据集对您的研究有帮助，请引用：
+
+```bibtex
+@article{li2026realtime,
+  title   = {Real-time semantic segmentation of orchard LiDAR point clouds
+             with a spherical-image convolutional neural network},
+  author  = {Li, Q. and Jing, S.},
+  journal = {Computers and Electronics in Agriculture},
+  year    = {2026},
+  pages   = {112634},
+  doi     = {10.1016/j.compag.2026.112634}
+}
+```
+
+> DOI: [10.1016/j.compag.2026.112634](https://doi.org/10.1016/j.compag.2026.112634)
+
 ## 📜 许可证与致谢
 
 - 本仓库代码基于开源框架 [lidar-bonnetal](https://github.com/PRBonn/lidar-bonnetal)（MIT License, © 2019 Andres Milioto, Jens Behley, Cyrill Stachniss, University of Bonn）改造，遵循 **MIT License**，原始版权声明见 [LICENSE](LICENSE)。
