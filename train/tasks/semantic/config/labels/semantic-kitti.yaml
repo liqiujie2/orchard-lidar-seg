@@ -1,0 +1,101 @@
+# This file is covered by the LICENSE file in the root of this project.
+name: "kitti"
+
+labels:
+  0 : "unlabeled"
+  1 : "tree_trunk"
+  2 : "pedestrian"
+  3 : "pole"
+  4 : "pole_cable"
+  5 : "fence"
+  6 : "slope"
+  7 : "shrub"
+  8 : "ground"
+  9 : "crown"
+
+color_map:  # bgr
+  0 : [0, 0, 0]        # unlabeled
+  1 : [0, 0, 255]      # tree_trunk (red)
+  2 : [255, 0, 0]      # pedestrian (blue)
+  3 : [255, 0, 255]    # pole (purple)
+  4 : [175, 176, 145]    # pole_cable (dark blue)
+  5 : [0, 255, 255]     # fence (yellow)
+  6 : [255, 105, 180]  # slope (pink)
+  7 : [139, 69, 19]    # shrub (brown)
+  8 : [0, 165, 255]    # ground (orange)
+  9 : [0, 255, 0]      # crown (green)
+
+content:
+  0: 0.0037   # unlabeled
+  1: 0.0450   # tree_trunk
+  2: 0.0082   # pedestrian
+  3: 0.0029   # pole
+  4: 0.0010   # pole_cable
+  5: 0.0082   # fence
+  6: 0.0703   # slope
+  7: 0.0276   # shrub
+  8: 0.6420   # ground
+  9: 0.1911   # crown
+
+learning_map:
+  0 : 0     # "unlabeled"
+  1 : 1     # "tree_trunk"
+  2 : 2     # "pedestrian"
+  3 : 3     # "pole"
+  4 : 4     # "pole_cable"
+  5 : 5     # "fence"
+  6 : 6     # "slope"
+  7 : 7     # "shrub"
+  8 : 8     # "ground"
+  9 : 9     # "crown"
+
+learning_map_inv:  # inverse of previous map
+  0: 0      # "unlabeled"
+  1: 1      # "tree_trunk"
+  2: 2      # "pedestrian"
+  3: 3      # "pole"
+  4: 4      # "pole_cable"
+  5: 5      # "fence"
+  6: 6      # "slope"
+  7: 7      # "shrub"
+  8: 8     # "ground"
+  9: 9      # "crown"
+
+learning_ignore:  # Ignore classes
+  0: True      # "unlabeled"
+  1: False     # "tree_trunk"
+  2: False     # "pedestrian"
+  3: False     # "pole"
+  4: False    # "pole_cable"
+  5: False     # "fence"
+  6: False   # "slope"
+  7: False    # "shrub"
+  8: False     # "ground"
+  9: False     # "crown"
+
+split: # sequence numbers
+    train:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+
+    valid:
+      - 16
+      - 17
+
+    test:
+      - 18
+      - 19

@@ -1,0 +1,76 @@
+train:
+  loss: "xentropy"
+  max_epochs: 150
+  lr: 0.01
+  wup_epochs: 1
+  momentum: 0.9
+  lr_decay: 0.995
+  w_decay: 0.0001
+  batch_size: 1
+  report_batch: 1
+  report_epoch: 1
+  epsilon_w: 0.001
+  save_summary: False
+  save_scans: True
+  show_scans: False
+  workers: 12
+
+backbone:
+  name: "darknet"
+  input_depth:
+    range: True
+    xyz: True
+    remission: True
+  dropout: 0.01
+  bn_d: 0.01
+  OS: 8
+  train: True
+  extra:
+    layers: 26
+
+decoder:
+  name: "darknet"
+  dropout: 0.01
+  bn_d: 0.01
+  train: True
+  extra: False
+
+head:
+  name: "segmentation"
+  train: True
+  dropout: 0.01
+
+post:
+  KNN:
+#    use:  True
+    use: False
+    params:
+      knn: 5
+      sigma: 1.0 
+      cutoff: 1.0
+
+dataset:
+  labels: "kitti"
+  scans: "kitti"
+  max_points: 150000
+  sensor:
+    name: "VLP16"
+    type: "spherical"
+    fov_up: 15
+    fov_down: -15
+    img_prop:
+      width: 900
+      height: 16
+    img_means: #range,x,y,z,signal
+      - 8.50
+      - 3.07
+      - 5.87
+      - 0.61
+      - 0.15
+    img_stds: #range,x,y,z,signal
+      - 7.26
+      - 6.85
+      - 5.67
+      - 1.30
+      - 0.12
+

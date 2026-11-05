@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.o
+*.a
+build/
+dist/
+.eggs/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------
+# Virtual environments  (never commit -- 29 MB of local wheels)
+# ---------------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+pyvenv.cfg
+
+# ---------------------------------------------------------------
+# IDE
+# ---------------------------------------------------------------
+.idea/
+.vscode/
+*.iml
+
+# ---------------------------------------------------------------
+# Training outputs / experiment artefacts
+# ---------------------------------------------------------------
+logs/
+runs/
+checkpoints/
+predictions/
+*.log
+devel/
+.catkin_tools/
+external.hpp
+
+# ---------------------------------------------------------------
+# OS
+# ---------------------------------------------------------------
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# ---------------------------------------------------------------
+# IMPORTANT -- the annotated dataset IS tracked on purpose.
+# train/tasks/semantic/dataset/sequences/00..19/{velodyne,labels}
+# must NOT be ignored: it is the released dataset of this paper.
+# ---------------------------------------------------------------

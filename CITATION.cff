@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this code or the accompanying dataset, please cite the following works."
+title: "Orchard Semantic Segmentation with Multi-line LiDAR (基于多线激光雷达的果园语义分割)"
+abstract: "Code and annotated point cloud dataset for full-scene semantic segmentation and tree-trunk instance segmentation in standardized orchards, using a VLP-16 multi-line LiDAR. The dataset contains 9 annotated classes over 20 sequences (1779 frames) in KITTI/SemanticKITTI format."
+type: software
+license: MIT
+repository-code: "https://github.com/<USERNAME>/<REPO>"
+
+authors:
+  - family-names: "Jing"
+    given-names: "Simiao"
+    name-particle: ""
+    affiliation: "Nanjing Forestry University"
+  - family-names: "Li"
+    given-names: "Qiujie"
+    affiliation: "Nanjing Forestry University"
+
+keywords:
+  - LiDAR
+  - point cloud
+  - semantic segmentation
+  - instance segmentation
+  - orchard
+  - precision agriculture
+  - spherical projection
+
+references:
+  - type: article
+    title: "基于球面投影图像深度学习的果园树干点云实例分割"
+    authors:
+      - family-names: "Jing"
+        given-names: "Simiao"
+      - family-names: "Li"
+        given-names: "Qiujie"
+    journal: "Transactions of the Chinese Society for Agricultural Machinery (农业机械学报)"
+    year: 2026
