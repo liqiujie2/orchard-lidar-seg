@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "If you use this code or the accompanying dataset, please cite the paper referenced below."
 title: "orchard-lidar-seg"
-abstract: "Code and annotated point cloud dataset for full-scene semantic segmentation and tree-trunk instance segmentation in standardized orchard scenes, collected with a VLP-16 multi-line LiDAR. The dataset contains 9 annotated classes over 20 sequences (1779 frames) in KITTI / SemanticKITTI format."
+abstract: "Code and annotated point cloud dataset for real-time semantic segmentation of orchard LiDAR point clouds with a spherical-image convolutional neural network (Darknet26-AS asymmetric encoder-decoder + Gaussian distance-weighted voting boundary refinement). The dataset contains 9 annotated classes over 20 sequences (1779 frames) in KITTI / SemanticKITTI format."
 type: software
 license: MIT
 repository-code: "https://github.com/liqiujie2/orchard-lidar-seg"
 version: "1.0.0"
-date-released: "2026-11-05"
+date-released: "2026-11-26"
 
 authors:
   - family-names: "Li"
@@ -20,10 +20,10 @@ keywords:
   - LiDAR
   - point cloud
   - semantic segmentation
-  - instance segmentation
+  - spherical projection
   - orchard
   - precision agriculture
-  - spherical projection
+  - real-time
   - KITTI
 
 references:
@@ -35,7 +35,8 @@ references:
       - family-names: "Jing"
         given-names: "S."
     journal: "Computers and Electronics in Agriculture"
-    year: 2026
+    year: 2027
+    volume: 258
     start: "112634"
     identifiers:
       - type: doi
