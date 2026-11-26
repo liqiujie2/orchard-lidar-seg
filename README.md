@@ -12,7 +12,7 @@ This repository releases the complete source code and annotated dataset for *Rea
 
 ---
 
-## ✨ 主要工作 / Main Contributions
+## 主要工作 / Main Contributions
 
 ### 1. 果园九类别激光雷达点云数据集构建
 
@@ -32,7 +32,7 @@ This repository releases the complete source code and annotated dataset for *Rea
 
 **Post-processing module for boundary refinement with Gaussian distance-weighted voting in image domain** — Boundary optimization is conducted in the 2D spherical-image space. A sliding window is used to select neighboring pixels, then k 3D nearest neighbors are filtered for Gaussian-weighted voting based on Euclidean distance. Hyper-parameters are tuned via grid search. This module corrects mis-segmentation at object boundaries and improves contour quality for slender cylindrical targets.
 
-## 🌳 采集场景信息 / Orchard Scene Information
+## 采集场景信息 / Orchard Scene Information
 
 - 数据采集于江苏省句容市后白镇薄壳山核桃标准化种植基地（31.88°N, 119.15°E）。
 - 果园采用行距 6 m × 株距 4 m 规范化密植模式；果树枝下高 0.7–1.4 m，胸径 10–25 cm。
@@ -46,7 +46,7 @@ This repository releases the complete source code and annotated dataset for *Rea
 * Typical objects in this scene include pedestrians, utility poles, power lines, shrubs, fences and slopes.
 * Field acquisition was conducted on sunny afternoons in summer.
 
-## 🗂 数据集 / Dataset
+## 数据集 / Dataset
 
 | 项目 | 说明 |
 | :--- | :--- |
@@ -74,7 +74,7 @@ This repository releases the complete source code and annotated dataset for *Rea
 | 8 | `ground` | 地面 | 64.20 % |
 | 9 | `crown` | 树冠 | 19.11 % |
 
-> ⚠️ 地面 + 树冠两类合计超过 80 %，树干仅占 4.5 %，**类别严重不平衡** —— 这正是本项目引入对数平滑加权交叉熵损失（log-smoothed weighted cross-entropy）的原因。
+> 地面 + 树冠两类合计超过 80 %，树干仅占 4.5 %，**类别严重不平衡** —— 这正是本项目引入对数平滑加权交叉熵损失（log-smoothed weighted cross-entropy）的原因。
 
 ### 数据划分（序列级划分，避免同一场景泄漏到不同子集）
 
@@ -100,7 +100,7 @@ train/tasks/semantic/dataset/sequences/
 - **`.bin`**：每点 4 个 `float32`（x, y, z, intensity），共 16 B/点。
 - **`.label`**：每点 1 个 `uint32`，值为上表类别 ID，与同名的 `.bin` 逐点一一对应。
 
-## 🖼 标注样例 / Annotation Samples
+## 标注样例 / Annotation Samples
 
 果园点云标注样例可视化：2 个行间，1 个地头
 
@@ -108,7 +108,7 @@ train/tasks/semantic/dataset/sequences/
 
 *（a）（b）行间场景，（c）地头场景，（d）局部细节。图例：树干 / 树冠 / 地面 / 人员 / 栅栏 / 电线杆 / 线缆 / 斜坡 / 灌木*
 
-## 📊 实验结果 / Experimental Results
+## 实验结果 / Experimental Results
 
 本模型在本开源果园 LiDAR 测试集上完成 9 类目标语义分割评估。实验硬件环境：Intel i9-12900K + NVIDIA RTX 3090 Ti；单帧耗时包含球面投影、网络推理、边界细化、逆投影完整流程。
 
@@ -136,7 +136,7 @@ train/tasks/semantic/dataset/sequences/
 
 > The proposed model is evaluated for 9-class semantic segmentation on the open-source orchard LiDAR test set. Hardware configuration: Intel i9-12900K + NVIDIA RTX 3090 Ti. The per-frame latency covers the full pipeline including spherical projection, network inference, boundary refinement and back-projection.
 
-## 🛠 环境依赖
+## 环境依赖
 
 实验环境为 Python 3.7 / CUDA 11.1：
 
@@ -148,7 +148,7 @@ pip install -r requirements.txt
 
 > 若使用较新的 GPU/驱动，可按本机 CUDA 版本替换 torch 版本，代码逻辑无需改动。
 
-## 🚀 使用
+## 使用
 
 所有命令均在 `train/tasks/semantic/` 目录下执行。
 
@@ -218,7 +218,7 @@ python visualize.py -d ./dataset -p ~/logs/orchard_pred -s 18
 
 > 注：`train.py` 中 `-dc` 的默认值假定从仓库根目录运行。若按上文在 `train/tasks/semantic/` 目录下执行，请像上面那样显式传入 `-dc config/labels/semantic-kitti.yaml`。
 
-## 📁 仓库结构
+## 仓库结构
 
 ```
 lidar-bonnetal/
@@ -232,7 +232,7 @@ lidar-bonnetal/
 │       │   └── labels/semantic-kitti.yaml  # 9 类定义、点云占比、序列划分
 │       ├── dataset/
 │       │   ├── kitti/parser.py             # 数据读取、在线增强与球面投影
-│       │   └── sequences/00..19/           # ★ 标注数据集（1779 帧）
+│       │   └── sequences/00..19/           # 标注数据集（1779 帧）
 │       ├── decoders/                       # 非对称转置卷积解码器
 │       ├── modules/                        # trainer / segmentator / ioueval / user
 │       ├── postproc/KNN.py                 # 边界细化后处理（高斯加权投票）
@@ -246,7 +246,7 @@ lidar-bonnetal/
 └── README.md
 ```
 
-## 📚 引用 / Citation
+## 引用 / Citation
 
 若本仓库的代码或数据集对您的研究有帮助，请引用：
 
@@ -265,7 +265,7 @@ lidar-bonnetal/
 }
 ```
 
-## 📜 许可证与致谢
+## 许可证与致谢
 
 - 本仓库代码基于开源框架 [lidar-bonnetal](https://github.com/PRBonn/lidar-bonnetal)（MIT License, © 2019 Andres Milioto, Jens Behley, Cyrill Stachniss, University of Bonn）改造，遵循 **MIT License**，原始版权声明见 [LICENSE](LICENSE)。
 - 数据集由作者实地采集并逐帧标注，随本仓库发布供学术研究使用；使用数据集时请注明出处。
